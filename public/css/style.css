@@ -305,3 +305,7 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 .toolbar input[type=checkbox] { min-width: 0; width: auto; }
 .brand span { white-space: nowrap; }
 @media (max-width: 640px) { .apphead .who #who, .apphead .hide-sm { display: none; } }
+.nav-ig { display: inline-flex; align-items: center; gap: 6px; }
+.btn .ig { flex: none; }
+.nav-links a { white-space: nowrap; }
+@media (max-width: 420px) { .nav .brand img { width: 32px; height: 32px; } .nav .brand { gap: 8px; font-size: 15px; } .nav-links { gap: 10px; } }
