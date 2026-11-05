@@ -33,7 +33,7 @@ Locked photos are never sent to the browser. Every photo is served through a sig
 
 ### 2. GitHub
 ```bash
-git remote add origin https://github.com/<you>/barberpulse.git
+git remote add origin https://github.com/barberpulseco/main.git
 git push -u origin main
 ```
 
@@ -46,7 +46,7 @@ git push -u origin main
    | `DATABASE_URL` | Supabase transaction pooler string |
    | `SUPABASE_URL` / `SUPABASE_SERVICE_ROLE_KEY` | from Supabase → API |
    | `SESSION_SECRET` | output of `openssl rand -hex 32` |
-   | `ADMIN_EMAIL` / `ADMIN_PASSWORD` | Ethan's login, created on first visit |
+   | `ADMIN_EMAIL` / `ADMIN_PASSWORD` | `barberpulseco@gmail.com` + a strong password (account is created on first visit) |
    | `SITE_URL` | `https://barberpulse.co` |
    | `STRIPE_SECRET_KEY` / `STRIPE_WEBHOOK_SECRET` | see step 4 |
    | `GOOGLE_MAPS_API_KEY` | optional: better nearby-shop results |
