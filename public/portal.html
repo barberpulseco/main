@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My photos · Barber Pulse</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <meta name="robots" content="noindex">
+</head>
+<body class="app-body">
+  <header class="apphead"><div class="wrap">
+    <a class="brand" href="/"><img src="/img/logo.svg" alt=""><span>BARBER PULSE<small>Barber portal</small></span></a>
+    <div class="who"><span id="who" class="hide-sm"></span><button class="btn btn-sm" onclick="logout()">Log out</button></div>
+  </div></header>
+
+  <main class="app wrap">
+    <div id="banner"></div>
+    <div class="page-title">
+      <div><p class="eyebrow">Welcome back</p><h1 id="hello">Your photos</h1></div>
+      <a class="btn btn-primary" href="#book">Book a shoot</a>
+    </div>
+
+    <div class="card" style="margin-bottom:16px" id="shop-card"></div>
+
+    <h2 style="font-size:18px;font-weight:900;text-transform:uppercase;margin:26px 0 12px">Your shoots</h2>
+    <div id="shoots"><div class="card empty">Loading…</div></div>
+
+    <section id="book" class="card" style="margin-top:28px">
+      <p class="eyebrow">Book another slot</p>
+      <h2 style="margin-top:6px">Request a shoot</h2>
+      <p class="muted" style="font-size:14px;margin-top:4px">Pick a package and a time that works. Ethan will confirm your slot.</p>
+      <form id="bf">
+        <div class="field"><label for="pkg">Package</label><select id="pkg" required></select><span class="hint" id="pkg-detail"></span></div>
+        <div class="field"><label>Add-ons</label><div id="addons"></div></div>
+        <div class="grid2">
+          <div class="field"><label for="when">Preferred date &amp; time</label><input id="when" type="datetime-local" required></div>
+          <div class="field"><label for="where">Location</label><select id="where"><option value="mine">My shop</option><option value="other">Somewhere else…</option></select></div>
+        </div>
+        <div id="other-shop" class="hide" style="margin-top:10px"></div>
+        <div class="field"><label for="notes">Anything we should know? <span class="muted">(optional)</span></label><textarea id="notes" placeholder="Looks you want, best time to walk in, parking…"></textarea></div>
+        <div class="row" style="margin-top:16px;justify-content:space-between">
+          <div><span class="muted" style="font-size:13px">Estimated total</span><div id="total" style="font-size:26px;font-weight:900">$0</div></div>
+          <button class="btn btn-primary">Request shoot</button>
+        </div>
+        <p class="form-error" id="berr"></p>
+      </form>
+    </section>
+  </main>
+  <script src="/js/common.js"></script>
+  <script src="/js/portal.js"></script>
+</body>
+</html>

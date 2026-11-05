@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <meta name="robots" content="noindex">
+  <title>Log in · Barber Pulse</title>
+</head>
+<body class="app-body">
+  <header class="nav"><div class="wrap"><a class="brand" href="/"><img src="/img/logo.svg" alt=""><span>BARBER PULSE<small>Toronto</small></span></a></div></header>
+  <main class="auth-shell">
+    <form class="card auth-card" id="f">
+      <p class="eyebrow">Barber Pulse</p>
+      <h1>Log in</h1>
+      <p class="muted">See your photos, pay, and book your next shoot.</p>
+      <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required></div>
+      <p class="form-error" id="err"></p>
+      <button class="btn btn-primary" style="width:100%;margin-top:6px">Log in</button>
+      <p class="muted" style="margin-top:16px;font-size:14px">New here? <a href="/signup">Create your account</a> · Forgot your password? DM <a href="https://www.instagram.com/barberpulse.to/" target="_blank" rel="noopener">@barberpulse.to</a> and we'll reset it.</p>
+    </form>
+  </main>
+  <script src="/js/common.js"></script>
+  <script>
+    const f = document.getElementById('f');
+    f.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = f.querySelector('button');
+      busy(btn, true, 'Logging in…');
+      try {
+        const r = await api('/api/auth/login', { method: 'POST', body: { email: f.email.value, password: f.password.value } });
+        location.href = r.next;
+      } catch (err) { document.getElementById('err').textContent = err.message; busy(btn, false); }
+    });
+  </script>
+</body>
+</html>

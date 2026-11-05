@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Admin · Barber Pulse</title>
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <meta name="robots" content="noindex">
+</head>
+<body class="app-body">
+  <header class="apphead"><div class="wrap">
+    <a class="brand" href="/"><img src="/img/logo.svg" alt=""><span>BARBER PULSE<small>Admin</small></span></a>
+    <div class="who"><span id="who"></span><button class="btn btn-sm" onclick="logout()">Log out</button></div>
+  </div></header>
+
+  <main class="app wrap">
+    <nav class="tabs" id="tabs">
+      <button data-tab="overview" class="on">Overview</button>
+      <button data-tab="shoots">Shoots <span class="count hide" id="req-count"></span></button>
+      <button data-tab="barbers">Barbers</button>
+      <button data-tab="shops">Shops</button>
+    </nav>
+
+    <section data-panel="overview">
+      <div class="row" style="justify-content:space-between">
+        <div class="seg" id="range"><button data-r="day">Day</button><button data-r="week" class="on">Week</button><button data-r="month">Month</button></div>
+        <div class="period">
+          <button class="btn btn-sm" id="prev" aria-label="Previous period">‹</button>
+          <span class="label" id="period-label"></span>
+          <button class="btn btn-sm" id="next" aria-label="Next period">›</button>
+          <button class="btn btn-sm" id="today">Today</button>
+        </div>
+      </div>
+      <div class="kpis" id="kpis"></div>
+      <div class="two-col">
+        <div class="card">
+          <div class="shoot-head"><h2 id="chart-title">Revenue</h2><span class="muted" style="font-size:13px" id="chart-sub"></span></div>
+          <div class="chart-wrap" id="chart"></div>
+          <h2 style="margin-top:22px" id="cal-title">Shoots</h2>
+          <div id="calendar"></div>
+        </div>
+        <div style="display:grid;gap:16px;align-content:start">
+          <div class="card"><h2>Photos due</h2><p class="muted" style="font-size:13px">Shot, not yet delivered. Due 7 days after the shoot (2 with rush).</p><div class="agenda" id="due"></div></div>
+          <div class="card"><h2>Payments this period</h2><div class="pay-list" id="payments"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section data-panel="shoots" class="hide">
+      <div class="toolbar">
+        <select id="f-status"><option value="">All statuses</option><option value="requested">Requested</option><option value="scheduled">Scheduled</option><option value="completed">Shot / editing</option><option value="delivered">Delivered</option><option value="cancelled">Cancelled</option></select>
+        <label class="row" style="gap:6px;font-size:14px;font-weight:700"><input type="checkbox" id="f-unpaid"> Unpaid only</label>
+        <span style="flex:1"></span>
+        <button class="btn btn-sm" onclick="newShoot({ walkin: true })">+ Walk-in ($20)</button>
+        <button class="btn btn-primary btn-sm" onclick="newShoot()">+ New shoot</button>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>When</th><th>Barber</th><th>Shop</th><th>Package</th><th>Status</th><th class="num">Price</th><th class="num">Paid</th><th class="num">Owing</th></tr></thead>
+        <tbody id="shoots-body"></tbody>
+      </table></div>
+    </section>
+
+    <section data-panel="barbers" class="hide">
+      <div class="toolbar">
+        <input type="search" id="b-search" placeholder="Search barbers…">
+        <span style="flex:1"></span>
+        <button class="btn btn-primary btn-sm" onclick="addBarber()">+ Add barber</button>
+      </div>
+      <div class="table-wrap"><table>
+        <thead><tr><th>Barber</th><th>Contact</th><th>Shop</th><th class="num">Shoots</th><th class="num">Paid</th><th class="num">Owing</th><th>Joined</th></tr></thead>
+        <tbody id="barbers-body"></tbody>
+      </table></div>
+    </section>
+
+    <section data-panel="shops" class="hide">
+      <div class="table-wrap"><table>
+        <thead><tr><th>Shop</th><th>Address</th><th class="num">Barbers</th><th class="num">Visits</th><th>Last visit</th><th>Next visit</th><th class="num">Revenue</th></tr></thead>
+        <tbody id="shops-body"></tbody>
+      </table></div>
+    </section>
+  </main>
+
+  <div class="scrim hide" id="scrim"></div>
+  <aside class="drawer hide" id="drawer" aria-modal="true" role="dialog">
+    <div class="drawer-head"><h2 id="d-title" style="font-size:18px;font-weight:900"></h2><button class="btn btn-sm" onclick="closeDrawer()">Close</button></div>
+    <div class="drawer-body" id="d-body"></div>
+  </aside>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/admin.js"></script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Barber Pulse">
+  <defs>
+    <clipPath id="pole"><rect x="84" y="62" width="32" height="84" rx="2"/></clipPath>
+  </defs>
+  <circle cx="100" cy="100" r="94" fill="#F1E7D8" stroke="#161412" stroke-width="9"/>
+  <circle cx="100" cy="40" r="8" fill="#161412"/>
+  <rect x="86" y="48" width="28" height="12" rx="3" fill="#161412"/>
+  <rect x="84" y="62" width="32" height="84" fill="#FAF5EE"/>
+  <g clip-path="url(#pole)" stroke="#161412" stroke-width="9">
+    <path d="M70 70 L130 40 M70 90 L130 60 M70 110 L130 80 M70 130 L130 100 M70 150 L130 120 M70 170 L130 140"/>
+  </g>
+  <rect x="84" y="62" width="32" height="84" fill="none" stroke="#161412" stroke-width="5"/>
+  <rect x="80" y="146" width="40" height="12" rx="3" fill="#161412"/>
+  <polyline points="22,108 72,108 82,92 92,130 104,72 114,122 122,108 178,108" fill="none" stroke="#161412" stroke-width="12" stroke-linejoin="round" stroke-linecap="round"/>
+  <polyline points="22,108 72,108 82,92 92,130 104,72 114,122 122,108 178,108" fill="none" stroke="#C8602F" stroke-width="6" stroke-linejoin="round" stroke-linecap="round"/>
+</svg>

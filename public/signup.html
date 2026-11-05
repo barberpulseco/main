@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;600;700;800;900&family=DM+Serif+Display:ital@1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  <meta name="robots" content="noindex">
+  <title>Get featured · Barber Pulse</title>
+</head>
+<body class="app-body">
+  <header class="nav"><div class="wrap"><a class="brand" href="/"><img src="/img/logo.svg" alt=""><span>BARBER PULSE<small>Toronto</small></span></a></div></header>
+  <main class="auth-shell">
+    <div class="card auth-card">
+      <div class="progress"><span class="on"></span><span id="p2"></span><span id="p3"></span></div>
+
+      <form id="step1">
+        <p class="eyebrow">Step 1 of 2 · About you</p>
+        <h1>Get featured</h1>
+        <p class="muted">Create your Barber Pulse account to see your photos and book shoots.</p>
+        <div class="field"><label for="name">Full name</label><input id="name" type="text" autocomplete="name" required></div>
+        <div class="field"><label for="email">Email</label><input id="email" type="email" autocomplete="email" required></div>
+        <div class="field"><label for="phone">Phone number</label><input id="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="(416) 555-0123" required></div>
+        <div class="field"><label for="pw">Create a password</label><input id="pw" type="password" autocomplete="new-password" minlength="8" required><span class="hint">At least 8 characters.</span></div>
+        <p class="form-error" id="err1"></p>
+        <button class="btn btn-primary" style="width:100%">Continue</button>
+        <p class="muted" style="margin-top:16px;font-size:14px">Already have an account? <a href="/login">Log in</a></p>
+      </form>
+
+      <form id="step2" class="hide">
+        <p class="eyebrow">Step 2 of 2 · Where you cut</p>
+        <h1>Your shop</h1>
+        <p class="muted">So we know where to go for your shoot.</p>
+        <div id="picker" style="margin-top:14px"></div>
+        <div class="field"><label for="ig">Instagram handle <span class="muted">(optional)</span></label><input id="ig" type="text" placeholder="@yourhandle" autocapitalize="off"></div>
+        <p class="form-error" id="err2"></p>
+        <button class="btn btn-primary" style="width:100%">Finish</button>
+      </form>
+    </div>
+  </main>
+  <script src="/js/common.js"></script>
+  <script>
+    const s1 = document.getElementById('step1'), s2 = document.getElementById('step2');
+    const params = new URLSearchParams(location.search);
+    const picker = shopPicker(document.getElementById('picker'));
+    const showStep2 = () => { s1.classList.add('hide'); s2.classList.remove('hide'); document.getElementById('p2').className = 'on'; };
+
+    api('/api/me').then(({ user }) => {
+      if (!user) return;
+      if (user.role === 'admin') location.href = '/admin';
+      else if (user.onboarded) location.href = params.get('book') ? '/portal#book' : '/portal';
+      else showStep2();
+    });
+
+    s1.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const btn = s1.querySelector('button');
+      busy(btn, true, 'Creating account…');
+      try {
+        await api('/api/auth/signup', { method: 'POST', body: {
+          name: s1.name.value, email: s1.email.value, phone: s1.phone.value, password: s1.pw.value } });
+        showStep2();
+      } catch (err) { document.getElementById('err1').textContent = err.message; }
+      busy(btn, false);
+    });
+
+    s2.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const shop = picker.get();
+      const errEl = document.getElementById('err2');
+      if (!shop) { errEl.textContent = 'Pick your shop from the list, or enter it manually.'; return; }
+      const btn = s2.querySelector('button');
+      busy(btn, true, 'Saving…');
+      try {
+        const r = await api('/api/onboarding', { method: 'POST', body: { shop, instagram: s2.ig.value } });
+        document.getElementById('p3').className = 'on';
+        location.href = r.next + (params.get('book') ? '#book' : '');
+      } catch (err) { errEl.textContent = err.message; busy(btn, false); }
+    });
+  </script>
+</body>
+</html>

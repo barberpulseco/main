@@ -1,0 +1,22 @@
+{
+  "name": "barberpulse",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Barber Pulse Toronto: landing page, barber portal and admin dashboard",
+  "main": "server.js",
+  "type": "commonjs",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dev": "node --watch server.js",
+    "start": "node server.js",
+    "db:migrate": "node scripts/migrate.js",
+    "seed": "node scripts/seed-demo.js"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.119.0",
+    "express": "^5.3.0",
+    "pg": "^8.23.1"
+  }
+}
