@@ -5,3 +5,5 @@ node_modules/
 .local-uploads/
 .vercel/
 .DS_Store
+*.zip
+*.bundle
