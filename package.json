@@ -2,7 +2,7 @@
   "name": "barberpulse",
   "version": "1.0.0",
   "private": true,
-  "description": "Barber Pulse Toronto: landing page, barber portal and admin dashboard",
+  "description": "The Barber Pulse: landing page, barber portal and admin dashboard",
   "main": "server.js",
   "type": "commonjs",
   "engines": {

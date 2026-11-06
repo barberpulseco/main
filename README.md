@@ -1,6 +1,6 @@
 # Barber Pulse — barberpulse.co
 
-Landing page, barber portal and admin dashboard for **Barber Pulse Toronto** (@barberpulse.to).
+Landing page, barber portal and admin dashboard for **The Barber Pulse** (@barberpulse.to).
 
 - **Landing** (`/`): the why (Supply / Demand / Trust / Distribution), how it works, the Content Packages menu, the $20 Walk-in Special and Barber of the Block.
 - **Barber sign-up** (`/signup`): name, email, phone, password → their shop (📍 nearby barbershops from their location, search, or manual entry) → Instagram.

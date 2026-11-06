@@ -309,3 +309,10 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 .btn .ig { flex: none; }
 .nav-links a { white-space: nowrap; }
 @media (max-width: 420px) { .nav .brand img { width: 32px; height: 32px; } .nav .brand { gap: 8px; font-size: 15px; } .nav-links { gap: 10px; } }
+@media (max-width: 480px) {
+  .nav .brand { min-width: 0; }
+  .nav .brand span { white-space: normal; max-width: 6.6em; line-height: 1.05; font-size: 15px; }
+  .nav .nav-links { flex: none; }
+  .nav .btn-sm { padding: 7px 10px; }
+}
+@media (max-width: 350px) { .nav .nav-ig { display: none; } }
