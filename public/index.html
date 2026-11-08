@@ -23,6 +23,7 @@
         <a class="hide-sm" href="#why">Why</a>
         <a class="hide-sm" href="#packages">Packages</a>
         <a class="hide-sm" href="#walk-ins">Walk-ins</a>
+        <a class="hide-sm" href="#barber-of-the-block">Top 5</a>
         <a class="nav-ig" href="https://www.instagram.com/barberpulse.co/" target="_blank" rel="noopener" aria-label="Barber Pulse on Instagram"><svg class="ig" viewBox="0 0 24 24" width="18" height="18" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.4" cy="6.6" r="1.3" fill="currentColor"/></svg><span class="hide-sm">@barberpulse.co</span></a>
         <a href="/login" id="nav-login">Log in</a>
         <a class="btn btn-primary btn-sm" href="/signup">Get featured</a>
@@ -151,23 +152,66 @@
     </div>
   </section>
 
-  <section class="botb">
+  <!-- Barber of the Block: to update each month, add a new folder in public/img/botb/ and swap the month label, cover and 5 cards below. -->
+  <section class="botb" id="barber-of-the-block">
     <div class="wrap">
-      <div class="botb-card" aria-hidden="true">
-        <div class="script">Barber<br>of the Block</div>
-        <p>Five barbers. Every month.<br>Picked by the community.</p>
-      </div>
-      <div>
-        <p class="eyebrow">New segment</p>
-        <h2>Barber of the Block</h2>
-        <p class="lead">Every month we spotlight five barbers from across the city, chosen by the people who sit in their chairs. Get featured, get nominated, and let the community vote.</p>
-        <div class="row">
-          <a class="btn btn-primary" href="/signup">Join the network</a>
-          <a class="btn" href="https://www.instagram.com/barberpulse.co/" target="_blank" rel="noopener">Follow @barberpulse.co</a>
+      <div class="botb-intro">
+        <div>
+          <p class="eyebrow">November 2026 · Top 5 contestants</p>
+          <h2>Barber of the Block</h2>
+          <p class="lead">Five barbers. Every month. Picked by the community. Meet this month's top 5, presented with <b>The Chair</b>, then follow along on Instagram to see who takes the block.</p>
+          <div class="row">
+            <a class="btn btn-primary" href="https://www.instagram.com/barberpulse.co/" target="_blank" rel="noopener">Vote on Instagram</a>
+            <a class="btn" href="/signup">Get nominated</a>
+          </div>
         </div>
+        <button type="button" class="botb-img botb-cover" data-full="/img/botb/2026-11/top5-cover.jpg" aria-label="View the Top 5 Contestants poster larger">
+          <img src="/img/botb/2026-11/top5-cover.jpg" alt="Barber of the Block, Top 5 Contestants poster with The Chair" width="1080" height="1350" loading="lazy">
+        </button>
       </div>
+
+      <h3 class="botb-sub">This month's top 5</h3>
+      <ol class="botb-grid">
+          <li class="botb-pick">
+            <button type="button" class="botb-img" data-full="/img/botb/2026-11/fadedbymk.jpg" data-handle="fadedbymk" aria-label="View @fadedbymk's card larger">
+              <img src="/img/botb/2026-11/fadedbymk.jpg" alt="Barber of the Block top 5 card for @fadedbymk" width="1080" height="1350" loading="lazy">
+            </button>
+            <a class="botb-handle" href="https://www.instagram.com/fadedbymk/" target="_blank" rel="noopener">@fadedbymk <span aria-hidden="true">↗</span></a>
+          </li>
+          <li class="botb-pick">
+            <button type="button" class="botb-img" data-full="/img/botb/2026-11/teo_fades.jpg" data-handle="teo_fades" aria-label="View @teo_fades's card larger">
+              <img src="/img/botb/2026-11/teo_fades.jpg" alt="Barber of the Block top 5 card for @teo_fades" width="1080" height="1350" loading="lazy">
+            </button>
+            <a class="botb-handle" href="https://www.instagram.com/teo_fades/" target="_blank" rel="noopener">@teo_fades <span aria-hidden="true">↗</span></a>
+          </li>
+          <li class="botb-pick">
+            <button type="button" class="botb-img" data-full="/img/botb/2026-11/ab.fades.jpg" data-handle="ab.fades" aria-label="View @ab.fades's card larger">
+              <img src="/img/botb/2026-11/ab.fades.jpg" alt="Barber of the Block top 5 card for @ab.fades" width="1080" height="1350" loading="lazy">
+            </button>
+            <a class="botb-handle" href="https://www.instagram.com/ab.fades/" target="_blank" rel="noopener">@ab.fades <span aria-hidden="true">↗</span></a>
+          </li>
+          <li class="botb-pick">
+            <button type="button" class="botb-img" data-full="/img/botb/2026-11/bradraiis.jpg" data-handle="bradraiis" aria-label="View @bradraiis's card larger">
+              <img src="/img/botb/2026-11/bradraiis.jpg" alt="Barber of the Block top 5 card for @bradraiis" width="1080" height="1350" loading="lazy">
+            </button>
+            <a class="botb-handle" href="https://www.instagram.com/bradraiis/" target="_blank" rel="noopener">@bradraiis <span aria-hidden="true">↗</span></a>
+          </li>
+          <li class="botb-pick">
+            <button type="button" class="botb-img" data-full="/img/botb/2026-11/647cuts.jpg" data-handle="647cuts" aria-label="View @647cuts's card larger">
+              <img src="/img/botb/2026-11/647cuts.jpg" alt="Barber of the Block top 5 card for @647cuts" width="1080" height="1350" loading="lazy">
+            </button>
+            <a class="botb-handle" href="https://www.instagram.com/647cuts/" target="_blank" rel="noopener">@647cuts <span aria-hidden="true">↗</span></a>
+          </li>
+      </ol>
+      <p class="botb-hint">Tap a card to see it bigger · tap a handle to visit their Instagram</p>
     </div>
   </section>
+
+  <dialog class="botb-viewer" id="botb-viewer" aria-label="Barber of the Block card">
+    <form method="dialog"><button class="botb-close" aria-label="Close">✕</button></form>
+    <img id="botb-viewer-img" alt="">
+    <a id="botb-viewer-link" class="btn btn-primary" target="_blank" rel="noopener"></a>
+  </dialog>
 
   <section class="block cta-final">
     <div class="wrap">
@@ -186,6 +230,16 @@
     </div>
   </footer>
   <script>
+    // Barber of the Block: open a card full-size
+    const viewer = document.getElementById('botb-viewer');
+    document.querySelectorAll('.botb-img').forEach((b) => b.addEventListener('click', () => {
+      const img = document.getElementById('botb-viewer-img'), link = document.getElementById('botb-viewer-link');
+      img.src = b.dataset.full; img.alt = b.querySelector('img').alt;
+      link.hidden = !b.dataset.handle;
+      if (b.dataset.handle) { link.href = `https://www.instagram.com/${b.dataset.handle}/`; link.textContent = `Visit @${b.dataset.handle} on Instagram`; }
+      viewer.showModal();
+    }));
+    viewer.addEventListener('click', (e) => { if (e.target === viewer) viewer.close(); });
     document.getElementById('yr').textContent = new Date().getFullYear();
     fetch('/api/me').then((r) => r.json()).then(({ user }) => {
       if (!user) return;
