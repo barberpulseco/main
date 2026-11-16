@@ -97,7 +97,7 @@ function shopPicker(root, { onChange } = {}) {
   const render = () => {
     list.innerHTML = results.map((s, i) => `
       <button type="button" class="shop-opt ${selected === s ? 'sel' : ''}" data-i="${i}">
-        <b>${esc(s.name)} ${s.source === 'existing' ? '<span class="tag rust">On Barber Pulse</span>' : ''}</b>
+        <b>${esc(s.name)} ${s.source === 'existing' ? '<span class="tag rust">On The Barber Pulse</span>' : ''}</b>
         <small>${esc(s.address || 'Address not listed')}</small>
       </button>`).join('');
   };

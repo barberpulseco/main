@@ -338,3 +338,4 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
   .nav .btn-sm { padding: 7px 10px; }
 }
 @media (max-width: 350px) { .nav .nav-ig { display: none; } }
+.hero-note { flex-wrap: wrap; }
