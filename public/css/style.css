@@ -339,3 +339,34 @@ td.num, th.num { text-align: right; font-variant-numeric: tabular-nums; white-sp
 }
 @media (max-width: 350px) { .nav .nav-ig { display: none; } }
 .hero-note { flex-wrap: wrap; }
+
+/* ---------- Barber of the City (editorial feature) ---------- */
+.botc { background: #e9dfcd; padding: 88px 0; border-top: 1px solid var(--line); }
+.botc-head { text-align: center; margin-bottom: 28px; }
+.botc-head h2 { font-family: var(--serif); font-style: normal; font-weight: 400; font-size: clamp(40px, 6vw, 68px); margin-top: 8px; letter-spacing: 0; }
+.botc-cover { margin: 0 auto; max-width: 560px; box-shadow: 0 24px 60px rgba(22, 20, 18, .22); }
+.botc-cover img { width: 100%; height: auto; }
+.story { max-width: 680px; margin: 48px auto 0; }
+.story-head { text-align: center; border-bottom: 1px solid #cdbfa8; padding-bottom: 26px; }
+.story-kicker { font-size: 12px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--rust); }
+.story-head h3 { font-family: var(--serif); font-weight: 400; font-size: clamp(30px, 4.6vw, 46px); line-height: 1.08; margin-top: 10px; letter-spacing: 0; }
+.story-dek { font-family: var(--serif); font-style: italic; font-size: 21px; line-height: 1.4; color: var(--ink-2); margin-top: 14px; }
+.story-by { font-size: 13px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-top: 16px; }
+.story-body { font-family: Georgia, "Times New Roman", serif; font-size: 19px; line-height: 1.7; color: var(--ink-2); padding-top: 28px; }
+.story-body p + p, .story-more > p { margin-top: 1.1em; }
+.story-more { margin-top: 1.1em; }
+.story-body .lede { font-size: 22px; color: var(--ink); }
+.story-body .lede::first-letter { float: left; font-family: var(--serif); font-size: 74px; line-height: .8; padding: 8px 10px 0 0; color: var(--rust); }
+.story-body h4 { font-family: var(--font); font-size: 13px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: var(--rust); margin: 2.2em 0 .2em; }
+.story-photo { margin: 2em 0 0; }
+.story-photo img { width: 100%; height: auto; }
+.story blockquote { margin: 1.6em 0; padding: 8px 0 8px 24px; border-left: 4px solid var(--rust-btn); }
+.story blockquote p { font-family: var(--serif); font-style: italic; font-size: 28px; line-height: 1.3; color: var(--ink); }
+.story blockquote cite { display: block; font-family: var(--font); font-style: normal; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin-top: 10px; }
+.story-follow { font-family: var(--font); font-weight: 800; font-size: 16px; margin-top: 2em !important; }
+.story-follow a, .story-sources a { color: var(--rust); }
+.story-sources { margin-top: 28px; padding-top: 18px; border-top: 1px solid #cdbfa8; font-family: var(--font); font-size: 13px; color: var(--muted); line-height: 1.5; }
+.story-sources h5 { font-size: 12px; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; margin: 0 0 8px; color: var(--ink-2); }
+.story-sources ul { margin: 0; padding-left: 18px; }
+.story-toggle { display: flex; margin: 32px auto 0; font-family: var(--font); }
+@media (max-width: 560px) { .botc { padding: 64px 0; } .story-body { font-size: 17px; } .story-body .lede { font-size: 19px; } .story blockquote p { font-size: 23px; } }
